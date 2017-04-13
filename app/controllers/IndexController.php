@@ -18,7 +18,7 @@ class IndexController extends ControllerBase
 		$query = $this->modelsManager->createQuery("SELECT media_id, videos, title, description FROM mediagold ORDER BY media_id DESC LIMIT 3");
 		$this->view->mediagold = $query->execute();
 
-		// $this->view->mediazilver = mediazilver::find();
-		// $this->view->mediagold = mediagold::find();
+$this->session->set('mediaid', array('id' =>  $_GET['id']));
+
     }
 }

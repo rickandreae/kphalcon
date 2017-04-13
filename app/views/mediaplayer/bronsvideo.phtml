@@ -46,11 +46,20 @@
 <div class="container">
 <h1>Brons</h1>
 {{ form("mediaplayer/bronsvideo") }}
-{{ text_field("videos", "class": "form-control", "placeholder": "videolink : https://player.vimeo.com/video/voorbeeld")}}
+{{ text_field("videos", "class": "form-control", "placeholder": "videolink : https://player.vimeo.com/voorbeeld")}}
+{{ text_field("thumbnail", "class": "form-control", "placeholder": "Naam van thumbnail //Bijvoorbeeld: ondernemen") }}
+{{ text_field("programma", "class": "form-control", "placeholder": "Programma") }}
 {{ text_field("title", "class": "form-control", "placeholder": "titel")}}
-{{ text_area("description", "class": "form-control", "placeholder": "eventuele text hier")}}
-{{ submit_button("submit", "class": "btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha") }}
-{{ end_form() }} 
+{{ text_area("description", "class": "form-control", "placeholder": "Video beschrijving hier")}}
+{{ submit_button("submit", "class": "btn btn-primary") }}
+{{ end_form() }}
+
+<h1>Upload thumbnail hier</h1>
+{{ form('mediaplayer/upload','enctype':'multipart/form-data','method':'POST')}}
+{{file_field('files[]', 'class':'form-control')}}
+{{submit_button('Upload Image', 'class':'btn btn-primary')}}
+{{ end_form() }}
+ 
 </div>
 
 

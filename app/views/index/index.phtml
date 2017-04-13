@@ -1,4 +1,10 @@
-   <header id="header" class="header" data-extension="Contact" style="background-image: url('http://kweekvijvernoord.com/wp-content/uploads/2017/04/Kweekvijver_young-creatives.jpg');">
+<?php 
+$show = $this->session->get('mediaid');
+$media = mediabrons::findFirstBymedia_id($show['id']);
+?>
+
+
+<header id="header" class="header" data-extension="Contact" style="background-image: url('http://kweekvijvernoord.com/wp-content/uploads/2017/04/Kweekvijver_young-creatives.jpg');">
 
   
       
@@ -38,48 +44,63 @@
         </div>
 
     </header>
-    
-{% if auth %}
-	<h1>Hello! https://www.sitepoint.com/sending-confirmation-emails-phalcon-swift/
-	</h1>
-	<h1>welcome you great person!!</h1>
-	{% else %}
+    <div class="container">
+        {% if auth %}
+    <h1>Hello! https://www.sitepoint.com/sending-confirmation-emails-phalcon-swift/
+    </h1>
+    <h1>welcome you great person!!</h1>
+    {% endif %}
 <h1>Nieuwste video's</h1>
 <div class="col-md-4">
 
 {% for mediabrons in mediabrons %}
-<li>	
-<iframe src="{{ mediabrons.videos }}"></iframe>
+<?php
+$mediaid = $mediabrons->media_id;
+?>
+<a href="mediaplayer/playbrons?id=<?php echo $mediaid;?>">
+<img src="public/img/thumbnail/{{ mediabrons.thumbnail }}.png" height="200" width="300"></img>
+</a>
 </br>
 <h1>{{mediabrons.title}}</h1>
 </br>
 {{mediabrons.description}}
-</li>	
+{{mediabrons.programma}}
+</br>   
 {% endfor %} 
 </div>
 
 <div class="col-md-4">
 {% for mediazilver in mediazilver %}
-<li>	
-<iframe src="{{ mediazilver.videos }}"></iframe>
+<?php
+$mediaid = $mediazilver->media_id;
+?>
+<a href="mediaplayer/playzilver?id=<?php echo $mediaid;?>">
+<img src="public/img/thumbnail/{{ mediazilver.thumbnail }}.png" height="200" width="300"></img>
+</a>
 </br>
 <h1>{{mediazilver.title}}</h1>
  </br>
-{{mediazilver.description}}
-</li>	
+{{mediazilver.description}} 
+{{mediazilver.programma}}
+</br>
 {% endfor %} 
 </div>
 
 <div class="col-md-4">
 {% for mediagold in mediagold %}
-<li>	
-<iframe src="{{ mediagold.videos }}"></iframe>
+<?php
+$mediaid = $mediagold->media_id;
+?>
+<a href="mediaplayer/playgold?id=<?php echo $mediaid;?>">   
+<img src="public/img/thumbnail/{{ mediagold.thumbnail }}.png" height="200" width="300"></img>
+</a>
 </br>
 <h1>{{mediagold.title}}</h1>
- </br>
+</br>
 {{mediagold.description}}
-</li>	
+{{mediagold.programma}} 
+</br>
 {% endfor %} 
+    </div>
 
 
-{% endif %}
