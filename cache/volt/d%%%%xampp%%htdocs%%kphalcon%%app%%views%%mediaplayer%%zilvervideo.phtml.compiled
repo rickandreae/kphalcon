@@ -1,7 +1,3 @@
-<?php
-$show = $this->session->get('mediaid');
-$media = mediazilver::findFirstBymedia_id($show['id']);
-?>
 <header id="header" class="header" data-extension="Contact" style="background-image: url('http://kweekvijvernoord.com/wp-content/uploads/2017/04/Kweekvijver_young-creatives.jpg');">
 
 	
@@ -42,12 +38,26 @@ $media = mediazilver::findFirstBymedia_id($show['id']);
         </div>
 
 </header>
+<?php if ($auth['lvl'] == 6) { ?>
+<?php
+
+?>
+<div class="row">
+<div class="col-md-3">
+		
+</div>
+
+<div class="col-md-9">
 <div class="container">
-<li>	
-<iframe src="<?php echo $media->videos; ?>"></iframe>
-</br>
-<h1><?php echo $media->title; ?></h1>
-</br>
-<?php echo $media->description; ?>
-</li>	
-</div
+<h1>Zilver</h1>
+<?php echo $this->tag->form(array('mediaplayer/zilvervideo')); ?>
+<?php echo $this->tag->textField(array('videos', 'class' => 'form-control', 'placeholder' => 'videolink : https://player.vimeo.com/video/voorbeeld')); ?>
+<?php echo $this->tag->textField(array('title', 'class' => 'form-control', 'placeholder' => 'titel')); ?>
+<?php echo $this->tag->textArea(array('description', 'class' => 'form-control', 'placeholder' => 'eventuele text hier')); ?>
+<?php echo $this->tag->submitButton(array('submit', 'class' => 'btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha')); ?>
+<?php echo $this->tag->endForm(); ?> 
+
+</div>
+</div>
+
+<?php } ?>
