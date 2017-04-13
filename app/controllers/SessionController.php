@@ -259,7 +259,6 @@ class SessionController extends ControllerBase
 
             if($user->save() != false)
             {
-                
                 $this->response->redirect('session');
             }else{
                 $this->view->message = 'something went wrong';

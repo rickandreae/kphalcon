@@ -1,21 +1,60 @@
+<header id="header" class="header" data-extension="Contact" style="background-image: url('http://kweekvijvernoord.com/wp-content/uploads/2017/04/Kweekvijver_young-creatives.jpg');">
+
+	
+      
+
+ <div class="container header__container">
+
+            
+            <div class="header__inner header__inner--large">
+
+                <div class="header__responsive-line">
+
+                    <img src="http://kweekvijvernoord.com/wp-content/themes/kvn/assets/img/top-line-header-title.png">
+
+                </div>
+
+                <h1 class="header__title text-transform-uppercase">JOUW PROFIEL GEGEVENS: {{auth['firstname']}} {{auth['lastname']}}</h1>
+
+                <div class="header__responsive-line">
+
+                    <img src="http://kweekvijvernoord.com/wp-content/themes/kvn/assets/img/bottom-line-header-title.png">
+
+                </div>
+
+            </div>
+
+            
+            <div class="header__sub-text-container">
+
+                <img src="http://kweekvijvernoord.com/wp-content/themes/kvn/assets/svg/top-line-header-sub-text.svg">
+
+                <h4 class="header__sub-text text-transform-uppercase">Young creatives</h4>
+
+                <img src="http://kweekvijvernoord.com/wp-content/themes/kvn/assets/svg/bottom-line-header-sub-text.svg">
+
+            </div>
+
+        </div>
+
+    </header>
 <div class="container">
-<div class="col-md-6" >
-<img src="/kphalcon/public/img/default.png"></img>
+<div>
+<img src="/kphalcon/public/img/default.png" height="300px" width="300px";></img>
 </div>
-<div class="col-md-6">
-<h1>{{auth['firstname']}} {{auth['lastname']}}</h1>
-<h1>{{auth['email']}}</h1>
-<a href="/kphalcon/session/changeemail/"><h1 class="glyphicon glyphicon-pencil">changeemail</h1></a>
-<h1>{{auth['birthdate']}}</h1>
-<a href="/kphalcon/session/changebirthdate/"><h1 class="glyphicon glyphicon-pencil">changebirthdate</h1></a>
-<h1>{{auth['phone']}}</h1>
-<a href="/kphalcon/session/changephone/"><h1 class="glyphicon glyphicon-pencil">changephone</h1></a>
-<h1>{{auth['mobile']}}</h1>
-<a href="/kphalcon/session/changemobile/"><h1 class="glyphicon glyphicon-pencil">changemobile</h1></a>
-<h1>{{auth['address']}}</h1>
-<h1>{{auth['zipcode']}} {{auth['city']}}</h1>
-<a href="/kphalcon/session/changeaddress/"><h1 class="glyphicon glyphicon-pencil">changeaddress</h1></a>
-<a href="/kphalcon/session/changepassword/"><h1 class="glyphicon glyphicon-pencil">changepass</h1></a>
-<h1>{{auth['userid']}}</h1>
+<div>
+<p>{{auth['firstname']}} {{auth['lastname']}}</p>
+<p>{{auth['email']}}</p>
+<a href="/kphalcon/session/changeemail/"><p class="glyphicon glyphicon-pencil">Verander je E-mail</p></a>
+<p>{{auth['birthdate']}}</p>
+<a href="/kphalcon/session/changebirthdate/"><p class="glyphicon glyphicon-pencil">Verander je geboortedatum</p></a>
+<p>{{auth['phone']}}</p>
+<a href="/kphalcon/session/changephone/"><p class="glyphicon glyphicon-pencil">Verander je telefoonnummer</p></a>
+<p>{{auth['mobile']}}</p>
+<a href="/kphalcon/session/changemobile/"><p class="glyphicon glyphicon-pencil">Verander je mobielenummer</p></a>
+<p>{{auth['address']}}</p>
+<p>{{auth['zipcode']}} {{auth['city']}}</p>
+<a href="/kphalcon/session/changeaddress/"><p class="glyphicon glyphicon-pencil">Verander je adres gegevens</p></a>
+<a href="/kphalcon/session/changepassword/"><p class="glyphicon glyphicon-pencil">Verander je wachtwoord</p></a>
 </div>
 </div>

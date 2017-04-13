@@ -10,14 +10,15 @@ class IndexController extends ControllerBase
     	mediabrons::find();
     	mediazilver::find();
     	mediagold::find();
-    	
-    	$query = $this->modelsManager->createQuery("SELECT media_id, videos, title, programma, thumbnail, description FROM mediabrons ORDER BY media_id DESC LIMIT 3");
-		$this->view->mediabrons = $query->execute();
-		$query = $this->modelsManager->createQuery("SELECT media_id, videos, title, programma, thumbnail, description FROM mediazilver ORDER BY media_id DESC LIMIT 3");
-		$this->view->mediazilver = $query->execute();
-		$query = $this->modelsManager->createQuery("SELECT media_id, videos, title, programma, thumbnail, description FROM mediagold ORDER BY media_id DESC LIMIT 3");
-		$this->view->mediagold = $query->execute();
-$this->session->set('mediaid', array('id' =>  $_GET['id']));
 
+    	$query = $this->modelsManager->createQuery("SELECT media_id, videos, title, description FROM mediabrons ORDER BY media_id DESC LIMIT 3");
+		$this->view->mediabrons = $query->execute();
+		$query = $this->modelsManager->createQuery("SELECT media_id, videos, title, description FROM mediazilver ORDER BY media_id DESC LIMIT 3");
+		$this->view->mediazilver = $query->execute();
+		$query = $this->modelsManager->createQuery("SELECT media_id, videos, title, description FROM mediagold ORDER BY media_id DESC LIMIT 3");
+		$this->view->mediagold = $query->execute();
+
+		// $this->view->mediazilver = mediazilver::find();
+		// $this->view->mediagold = mediagold::find();
     }
 }

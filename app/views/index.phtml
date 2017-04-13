@@ -1,28 +1,21 @@
 <!DOCTYPE html> 
-<html> 
+<html class="js flexbox flexboxlegacy canvas canvastext webgl touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csspositionsticky app-active  js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths csspositionsticky"> 
 	<head>
 	    <title>Kphalcon</title> 
-	    	{{ stylesheet_link('/css/registerstyle.css')}}
-	    	{{ stylesheet_link('/css/loginstyle.css')}}
-	    	{{ stylesheet_link('/css/style.css')}}
-			{{ stylesheet_link('/css/index.css')}}
-			{{ stylesheet_link('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}
-			{{ stylesheet_link('/css/packagestyle.css')}}
-			{{ stylesheet_link('/css/aboutusstyle.css')}}
-			{{ stylesheet_link('/css/contactstyle.css')}}
-			{{ stylesheet_link('/css/faqstyle.css')}}
+	    	{{ stylesheet_link('css/style.css')}}
+	    	{{ stylesheet_link('css/dropdown.css')}}
 	</head>
-	<body class="page-background">
-		<div class="container">
+	<body>
+		
 			{{ partial("layouts/header")}} 
 			{{ content()}} 
-		</div>
-
-		<div class="container">
+		
+		
 			{{ partial("layouts/footer")}}
-		</div>			 
+					 
 			{{ javascript_include('/js/jquery-3.1.1.min.js') }} 
-			{{ javascript_include('/js/bootstrap.js') }}
+			{{ javascript_include('/js/main.js') }}
 			{{ javascript_include('/js/register.js') }}
+			{{ javascript_include('/js/dropdown.js') }}
 	</body>
 </html>

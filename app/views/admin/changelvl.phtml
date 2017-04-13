@@ -1,15 +1,62 @@
+<header id="header" class="header" data-extension="Contact" style="background-image: url('http://kweekvijvernoord.com/wp-content/uploads/2017/04/Kweekvijver_young-creatives.jpg');">
+
+	
+      
+
+ <div class="container header__container">
+
+            
+            <div class="header__inner header__inner--large">
+
+                <div class="header__responsive-line">
+
+                    <img src="http://kweekvijvernoord.com/wp-content/themes/kvn/assets/img/top-line-header-title.png">
+
+                </div>
+
+                <h1 class="header__title text-transform-uppercase">Admin Dashboard:<br>{{auth['firstname']}} {{auth['lastname']}}</h1>
+
+                <div class="header__responsive-line">
+
+                    <img src="http://kweekvijvernoord.com/wp-content/themes/kvn/assets/img/bottom-line-header-title.png">
+
+                </div>
+
+            </div>
+
+            
+            <div class="header__sub-text-container">
+
+                <img src="http://kweekvijvernoord.com/wp-content/themes/kvn/assets/svg/top-line-header-sub-text.svg">
+
+                <h4 class="header__sub-text text-transform-uppercase">Young creatives</h4>
+
+                <img src="http://kweekvijvernoord.com/wp-content/themes/kvn/assets/svg/bottom-line-header-sub-text.svg">
+
+            </div>
+
+        </div>
+
+</header>
 <?php
 	$users = users::find("");
 
 ?>
-
+<div class="container">
 {% if auth['lvl'] == 6 %}
 
 {{ form("admin/changelvl") }} 
 {{ select("user_id", users, "using": ["user_id", "email"], "class": "form-control") }}
 
- {{ text_field("lvl", "class": "form-control")}}
- {{ submit_button("submit", "class": "btn btn-primary") }}
+ 
+  <select id="lvl">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="4">5</option>
+</select>
+ {{ submit_button("submit", "class": "btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha") }}
 
 {{ end_form() }}
 
@@ -20,3 +67,4 @@
 $this->response->redirect('');
 ?>
 {%endif%}
+</div>
