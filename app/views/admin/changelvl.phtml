@@ -40,22 +40,12 @@
 </header>
 <?php
 	$users = users::find("");
-
 ?>
 <div class="container">
 {% if auth['lvl'] == 6 %}
 
 {{ form("admin/changelvl") }} 
 {{ select("user_id", users, "using": ["user_id", "email"], "class": "form-control") }}
-
- 
-  <select id="lvl">
-  <option value="1">1</option>
-  <option value="2">2</option>
-  <option value="3">3</option>
-  <option value="4">4</option>
-  <option value="4">5</option>
-</select>
  {{ submit_button("submit", "class": "btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha") }}
 
 {{ end_form() }}

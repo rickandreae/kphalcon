@@ -52,7 +52,6 @@ $media = mediabrons::findFirstBymedia_id($show['id']);
     {% endif %}
 <h1>Nieuwste video's</h1>
 <div class="col-md-4">
-
 {% for mediabrons in mediabrons %}
 <?php
 $mediaid = $mediabrons->media_id;
@@ -101,6 +100,5 @@ $mediaid = $mediagold->media_id;
 {{mediagold.programma}} 
 </br>
 {% endfor %} 
-    </div>
 
 
