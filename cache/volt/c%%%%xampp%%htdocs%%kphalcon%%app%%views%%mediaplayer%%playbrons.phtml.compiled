@@ -18,7 +18,7 @@ $media = mediabrons::findFirstBymedia_id($show['id']);
 
                 </div>
 
-                <h1 class="header__title text-transform-uppercase">Admin Dashboard:<br>{{auth['firstname']}} {{auth['lastname']}}</h1>
+                <h1 class="header__title text-transform-uppercase">Admin Dashboard:<br><?php echo $auth['firstname']; ?> <?php echo $auth['lastname']; ?></h1>
 
                 <div class="header__responsive-line">
 
@@ -43,18 +43,18 @@ $media = mediabrons::findFirstBymedia_id($show['id']);
 
 </header>
 <div class="container">
-{% if auth['lvl'] > 3 %}	
-<iframe src="{{ media.videos }}"></iframe>
-{% else %}
+<?php if ($auth['lvl'] > 3) { ?>	
+<iframe src="<?php echo $media->videos; ?>"></iframe>
+<?php } else { ?>
 <div style="width:100%; height:100%;">
 <div style="position:absolute; top:30px;">
-<img style="position:relative" src="../img/thumbnail/{{ media.thumbnail }}.png" height="600" width="900"></img>
+<img style="position:relative" src="../img/thumbnail/<?php echo $media->thumbnail; ?>.png" height="600" width="900"></img>
 <h1 style="left:0; width:100%; top:30px; position:absolute; color:red; text-align:center">Sorry, deze video is alleen</br> te bekijken door pakketjesgebruikers</h1>
 </div>
 </div>
-{% endif %}
+<?php } ?>
 </br>
-<h1>{{media.title}}</h1>
+<h1><?php echo $media->title; ?></h1>
 </br>
-{{media.description}}	
+<?php echo $media->description; ?>	
 </div>

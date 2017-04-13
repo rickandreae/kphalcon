@@ -1,0 +1,16 @@
+
+			<div id="basic">
+				<h1>Brons</h1>
+					<p><span class="excluded glyphicon glyphicon-remove"></span> livestream</p>
+
+					<p><span class="excluded glyphicon glyphicon-remove"></span> Workshop</p>
+				
+					<p><span class="excluded glyphicon glyphicon-remove"></span> workshop deel 2</p>
+				
+					<p><span class="excluded glyphicon glyphicon-remove"></span> workshop deel 3</p>
+
+					<p><span class="excluded glyphicon glyphicon-remove"></span> workshop deel 4</p>
+				<?php echo $this->tag->form(array('package/package1')); ?>
+				<?php echo $this->tag->submitButton(array('id' => 'brons', 'name' => 'pakket1', 'class' => 'btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha', 'onclick' => 'packages();')); ?>
+				<?php echo $this->tag->endForm(); ?>
+			</div>	

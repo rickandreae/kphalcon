@@ -1,7 +1,3 @@
-<?php
-$show = $this->session->get('mediaid');
-$media = mediabrons::findFirstBymedia_id($show['id']);
-?>
 <header id="header" class="header" data-extension="Contact" style="background-image: url('http://kweekvijvernoord.com/wp-content/uploads/2017/04/Kweekvijver_young-creatives.jpg');">
 
 	
@@ -18,7 +14,7 @@ $media = mediabrons::findFirstBymedia_id($show['id']);
 
                 </div>
 
-                <h1 class="header__title text-transform-uppercase">Admin Dashboard:<br>{{auth['firstname']}} {{auth['lastname']}}</h1>
+                <h1 class="header__title text-transform-uppercase">Admin Dashboard:<br><?php echo $auth['firstname']; ?> <?php echo $auth['lastname']; ?></h1>
 
                 <div class="header__responsive-line">
 
@@ -42,19 +38,33 @@ $media = mediabrons::findFirstBymedia_id($show['id']);
         </div>
 
 </header>
+<?php
+	$users = users::find("");
+
+?>
 <div class="container">
-{% if auth['lvl'] > 3 %}	
-<iframe src="{{ media.videos }}"></iframe>
-{% else %}
-<div style="width:100%; height:100%;">
-<div style="position:absolute; top:30px;">
-<img style="position:relative" src="../img/thumbnail/{{ media.thumbnail }}.png" height="600" width="900"></img>
-<h1 style="left:0; width:100%; top:30px; position:absolute; color:red; text-align:center">Sorry, deze video is alleen</br> te bekijken door pakketjesgebruikers</h1>
-</div>
-</div>
-{% endif %}
-</br>
-<h1>{{media.title}}</h1>
-</br>
-{{media.description}}	
+<?php if ($auth['lvl'] == 6) { ?>
+
+<?php echo $this->tag->form(array('admin/changelvl')); ?> 
+<?php echo $this->tag->select(array('user_id', $users, 'using' => array('user_id', 'email'), 'class' => 'form-control')); ?>
+
+ 
+  <select id="lvl">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="4">5</option>
+</select>
+ <?php echo $this->tag->submitButton(array('submit', 'class' => 'btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha')); ?>
+
+<?php echo $this->tag->endForm(); ?>
+
+<?php } ?>
+
+<?php if ($auth['lvl'] < 6) { ?>
+<?php
+$this->response->redirect('');
+?>
+<?php } ?>
 </div>
