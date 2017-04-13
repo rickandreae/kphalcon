@@ -1,0 +1,22 @@
+<?php
+	$users = users::find("");
+
+?>
+
+{% if auth['lvl'] == 6 %}
+
+{{ form("admin/changelvl") }} 
+{{ select("user_id", users, "using": ["user_id", "email"], "class": "form-control") }}
+
+ {{ text_field("lvl", "class": "form-control")}}
+ {{ submit_button("submit", "class": "btn btn-primary") }}
+
+{{ end_form() }}
+
+{%endif%}
+
+{% if auth['lvl'] < 6 %}
+<?php
+$this->response->redirect('');
+?>
+{%endif%}

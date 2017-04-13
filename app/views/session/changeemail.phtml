@@ -1,0 +1,9 @@
+ <?php 
+
+$users = users::find("");
+
+?>
+{{ form("session/changeemail") }} 
+ {{ email_field("email", "class": "form-control", "placeholder": "Email") }}
+ {{ submit_button("submit", "class": "btn btn-primary") }}
+ {{ end_form() }}

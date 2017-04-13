@@ -1,0 +1,28 @@
+<!DOCTYPE html> 
+<html> 
+	<head>
+	    <title>Kphalcon</title> 
+	    	{{ stylesheet_link('/css/registerstyle.css')}}
+	    	{{ stylesheet_link('/css/loginstyle.css')}}
+	    	{{ stylesheet_link('/css/style.css')}}
+			{{ stylesheet_link('/css/index.css')}}
+			{{ stylesheet_link('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')}}
+			{{ stylesheet_link('/css/packagestyle.css')}}
+			{{ stylesheet_link('/css/aboutusstyle.css')}}
+			{{ stylesheet_link('/css/contactstyle.css')}}
+			{{ stylesheet_link('/css/faqstyle.css')}}
+	</head>
+	<body class="page-background">
+		<div class="container">
+			{{ partial("layouts/header")}} 
+			{{ content()}} 
+		</div>
+
+		<div class="container">
+			{{ partial("layouts/footer")}}
+		</div>			 
+			{{ javascript_include('/js/jquery-3.1.1.min.js') }} 
+			{{ javascript_include('/js/bootstrap.js') }}
+			{{ javascript_include('/js/register.js') }}
+	</body>
+</html>

@@ -1,0 +1,9 @@
+ <?php 
+
+$users = users::find("");
+
+?>
+{{ form("session/changephone") }} 
+ {{ tel_field("phone", "class": "form-control", "placeholder": "Tel:XXXX-XXXXXX", "pattern": "\d{4}[\-]?\d{3}\d{3}") }}
+ {{ submit_button("submit", "class": "btn btn-primary") }}
+ {{ end_form() }}

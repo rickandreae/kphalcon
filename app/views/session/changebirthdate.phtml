@@ -1,0 +1,11 @@
+<?php 
+
+$users = users::find("");
+
+?>
+{{ form("session/changebirthdate") }} 
+
+ {{ date_field("birthdate", "class": "form-control")}}
+ {{ submit_button("submit", "class": "btn btn-primary") }}
+
+{{ end_form() }}

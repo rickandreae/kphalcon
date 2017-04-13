@@ -1,0 +1,17 @@
+{{ form("session") }}
+<div id="container1" style="width:100%">
+		<div id="loginlist">	
+			<h1>Log In</h1>	
+			{{ text_field("email", "class": "form-control", "placeholder": "Email", "required") }}
+			
+			{{ password_field("password", "class": "form-control", "placeholder": "password", "required") }}
+				
+			{{ submit_button("Log In", "class": "btn btn-primary") }}
+
+			   <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+        value="<?php echo $this->security->getToken() ?>"/>
+			<br>	
+			<a href="/kphalcon/changepass">Wachtwoord vergeten?</a>
+		</div>
+</div>
+{{ end_form() }}

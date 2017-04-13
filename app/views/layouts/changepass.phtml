@@ -1,0 +1,12 @@
+{{ form('changepass') }}
+<div id="reglist">
+	<h1>Wachtwoord vergeten?</h1>
+
+	<p>Vul hier je email in</p>
+
+	{{ text_field("email", "class": "form-control", "placeholder": "Email") }}
+
+	{{ submit_button("Verstuur", "class": "btn btn-primary") }}
+</div>
+{{ end_form() }}
+

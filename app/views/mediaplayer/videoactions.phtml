@@ -1,0 +1,39 @@
+<div class="col-md-4">
+{% for mediabrons in mediabrons %}
+<li>	
+<iframe src="{{ mediabrons.videos }}"></iframe>
+<a href="/kphalcon/mediaplayer/deletevideo/{{ mediabrons.media_id }}/">Delete video</a>
+</br>
+<h1>{{mediabrons.title}}</h1>
+ </br>
+{{mediabrons.description}}
+</li>	
+{% endfor %} 
+</div>
+
+<div class="col-md-4">
+{% for mediazilver in mediazilver %}
+<li>	
+<iframe src="{{ mediazilver.videos }}"></iframe>
+<a href="/kphalcon/mediaplayer/deletevideo/{{ mediazilver.media_id }}/">Delete video</a>
+</br>
+<h1>{{mediazilver.title}}</h1>
+ </br>
+{{mediazilver.description}}
+</li>	
+{% endfor %} 
+</div>
+
+<div class="col-md-4">
+{% for mediagold in mediagold %}
+<li>	
+<iframe src="{{ mediagold.videos }}"></iframe>
+<a href="/kphalcon/mediaplayer/deletevideo/{{ mediagold.media_id }}/">Delete video</a>
+</br>
+<h1>{{mediagold.title}}</h1>
+ </br>
+{{mediagold.description}}
+</li>	
+{% endfor %} 
+</div>
+

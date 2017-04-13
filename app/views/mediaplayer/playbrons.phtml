@@ -1,0 +1,21 @@
+<?php
+$show = $this->session->get('mediaid');
+$media = mediabrons::findFirstBymedia_id($show['id']);
+?>
+
+<div class="container">
+{% if auth['lvl'] > 3 %}	
+<iframe src="{{ media.videos }}"></iframe>
+{% else %}
+<div style="width:100%; height:100%;">
+<div style="position:absolute; top:30px;">
+<img style="position:relative" src="../img/thumbnail/{{ media.thumbnail }}.png" height="600" width="900"></img>
+<h1 style="left:0; width:100%; top:30px; position:absolute; color:red; text-align:center">Sorry, deze video is alleen</br> te bekijken door pakketjesgebruikers</h1>
+</div>
+</div>
+{% endif %}
+</br>
+<h1>{{media.title}}</h1>
+</br>
+{{media.description}}	
+</div>

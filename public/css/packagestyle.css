@@ -1,0 +1,34 @@
+.packages {
+	/*text-align: center;*/
+}
+
+.bestelbtn {
+	margin-bottom: 5px;
+}
+
+.included {
+	color: green;
+}
+
+.excluded {
+	color: red;
+}
+
+#basic {
+	background-color: lightgrey;
+	border-style: solid black 1px; 
+}
+
+#plus {
+	background-color: gray;
+}
+
+#premium {
+	background-color: lightgrey;
+}
+
+#max {
+	background-color: gray;
+}
+
+

@@ -1,0 +1,11 @@
+ <?php 
+
+$users = users::find("");
+
+?>
+{{ form("session/changeaddress") }} 
+{{ text_field("address", "class": "form-control", "placeholder": "Adres", "pattern": "[a-zA-Z]{99}\s?[1-999]{999}\[a-z]{1}") }} 
+{{ text_field("zipcode", "class": "form-control", "placeholder": "Postcode" , "pattern": "[1-9][0-9]{3}\s?[a-zA-Z]{2}") }}
+{{ text_field("city", "class": "form-control", "placeholder": "Stad") }}
+{{ submit_button("submit", "class": "btn btn-primary") }}
+{{ end_form() }}

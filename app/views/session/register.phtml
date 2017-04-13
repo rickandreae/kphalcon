@@ -1,0 +1,55 @@
+<?php 
+$roles = roles::find("");
+$schools = schools::find("");
+$products = products::find("");
+
+$producten = $this->session->get('producten');
+
+print_r($producten);
+?>
+<script type="text/javascript">  </script>
+{{ form("session/register") }} 
+<div id="reglist">
+
+        <h2>Registreren</h2>
+
+
+        {{ select("roles_id", roles, "using": ["roles_id", "roles_type"],  "class": "form-control",  "useEmpty" : true, "emptyValue":"@", "onchange" : "reveal_schools(); reveal_entrepreneur_form();") }}
+        
+        {{ select("school_id", schools, "using": ["school_id", "school_name"], "useEmpty": true, "emptyText": "Kies uw school...", "emptyValue": "@", "class": "form-control", "style" : "display:none;", "onchange" : "set_input_value();" ) }}
+
+        {{ select("products_id", products, "using": ["id", "name"], "useEmpty": true, "emptyText": "Kies een pakket...", "emptyValue": "@", "class": "form-control" )}}
+
+        {{ text_field("companies", "class": "form-control", "placeholder": "Bedrijf", "style":"display:none;") }}
+
+        {{ text_field("firstname", "class": "form-control", "placeholder": "Voornaam") }}
+            
+        {{ text_field("lastname", "class": "form-control", "placeholder": "Achternaam") }}
+        
+        {{ text_field("aEmail", "class": "form-control","placeholder": "Email", "onkeyup" : "fuse_email();") }}
+
+        {{ text_field("bEmail", "class": "form-control", "placeholder": "@example.com", "readonly":"true" ) }}
+        
+        {{ email_field("email", "class": "form-control", "placeholder": "Email" , "style":"display:none;") }}
+
+        {{ password_field("password", "class": "form-control", "placeholder": "Password")}}
+
+        {{ text_field("birthdate", "class": "form-control", "placeholder": "Geboortedatum", "pattern": "\d{1,2}-\d{1,2}-\d{4}") }}
+
+        {{ tel_field("phone", "class": "form-control", "placeholder": "Tel:XXXX-XXXXXX", "pattern": "\d{4}[\-]?\d{3}\d{3}") }}
+
+        {{ tel_field("mobile", "class": "form-control", "placeholder": "Mobiel:06XXXXXXXX", "pattern": "\d{2}\d{4}\d{4}")}}
+
+        {{ text_field("address", "class": "form-control", "placeholder": "Adres", "pattern": "[a-zA-Z]{99}\s?[1-999]{999}\[a-z]{1}") }} 
+
+        {{ text_field("zipcode", "class": "form-control", "placeholder": "Postcode" , "pattern": "[1-9][0-9]{3}\s?[a-zA-Z]{2}") }}
+
+        {{ text_field("city", "class": "form-control", "placeholder": "Stad") }}
+            
+        {{ submit_button("Sign Up", "class": "btn btn-primary") }}
+        
+        <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+        value="<?php echo $this->security->getToken() ?>"/>
+        
+</div>
+{{ end_form() }}

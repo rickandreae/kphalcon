@@ -1,0 +1,14 @@
+<?php
+$show = $this->session->get('mediaid');
+$media = mediazilver::findFirstBymedia_id($show['id']);
+?>
+
+<div class="container">
+<li>	
+<iframe src="{{ media.videos }}"></iframe>
+</br>
+<h1>{{media.title}}</h1>
+</br>
+{{media.description}}
+</li>	
+</div

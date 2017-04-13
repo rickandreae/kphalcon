@@ -1,0 +1,54 @@
+<div class="row">
+<div class="col-md-3">
+		
+</div>
+
+<div class="col-md-9">
+<div class="container">
+{% for mediabrons in mediabrons %}
+<?php
+$mediaid = $mediabrons->media_id;
+?>
+
+<li>
+<a href="playbrons?id=<?php echo $mediaid;?>">	
+<img src="/kphalcon/public/img/thumbnail/{{ mediabrons.thumbnail }}.png" height="200" width="300"></img>
+</a>
+</br>
+<h1>{{mediabrons.title}}</h1>
+ </br>
+{{mediabrons.description}}
+</li>	
+{% endfor %} 
+
+{% for mediazilver in mediazilver %}
+<?php
+$mediaid = $mediazilver->media_id;
+?>
+<li>
+<a href="playzilver?id=<?php echo $mediaid;?>">		
+<img src="/kphalcon/public/img/thumbnail/{{ mediazilver.thumbnail }}.png" height="200" width="300"></img>
+</a>
+</br>
+<h1>{{mediazilver.title}}</h1>
+ </br>
+{{mediazilver.description}}
+</li>	
+{% endfor %} 
+
+{% for mediagold in mediagold %}
+<?php
+$mediaid = $mediagold->media_id;
+?>
+<li>
+<a href="playgold?id=<?php echo $mediaid;?>">	
+<img src="/kphalcon/public/img/thumbnail/{{ mediagold.thumbnail }}.png" height="200" width="300"></img>
+</a>
+</br>
+<h1>{{mediagold.title}}</h1>
+ </br>
+{{mediagold.description}}
+</li>	
+{% endfor %} 
+</div>
+</div>

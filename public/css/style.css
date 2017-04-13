@@ -1,0 +1,41 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html,
+body {
+  height:100%;
+ /*color:#f1f1f1;*/
+  /* The html and body elements cannot have any padding or margin. */
+  /*padding-top: 80px; *//* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+
+
+@media(min-width:768px) {
+    body {
+       /* padding-top: 100px;*/ /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+    }
+}
+
+.logo-kweekvijver > img:nth-child(1){
+  width:65px;
+  height:65px;
+  margin-top:-22px;
+}
+
+#main-content{
+  height:70%;
+}
+
+#footer{
+  height:10%;
+}
+
+.login {
+margin-bottom:5px;
+}
+
+.dropdown-menu {
+    width: 300px !important;
+}
+

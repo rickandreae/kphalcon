@@ -1,0 +1,21 @@
+<div class="container">
+<div class="col-md-6" >
+<img src="/kphalcon/public/img/default.png"></img>
+</div>
+<div class="col-md-6">
+<h1>{{auth['firstname']}} {{auth['lastname']}}</h1>
+<h1>{{auth['email']}}</h1>
+<a href="/kphalcon/session/changeemail/"><h1 class="glyphicon glyphicon-pencil">changeemail</h1></a>
+<h1>{{auth['birthdate']}}</h1>
+<a href="/kphalcon/session/changebirthdate/"><h1 class="glyphicon glyphicon-pencil">changebirthdate</h1></a>
+<h1>{{auth['phone']}}</h1>
+<a href="/kphalcon/session/changephone/"><h1 class="glyphicon glyphicon-pencil">changephone</h1></a>
+<h1>{{auth['mobile']}}</h1>
+<a href="/kphalcon/session/changemobile/"><h1 class="glyphicon glyphicon-pencil">changemobile</h1></a>
+<h1>{{auth['address']}}</h1>
+<h1>{{auth['zipcode']}} {{auth['city']}}</h1>
+<a href="/kphalcon/session/changeaddress/"><h1 class="glyphicon glyphicon-pencil">changeaddress</h1></a>
+<a href="/kphalcon/session/changepassword/"><h1 class="glyphicon glyphicon-pencil">changepass</h1></a>
+<h1>{{auth['userid']}}</h1>
+</div>
+</div>

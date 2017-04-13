@@ -1,0 +1,32 @@
+{% if auth['lvl'] == 6 %}
+<?php
+
+?>
+
+<div class="row">
+<div class="col-md-3">
+		
+</div>
+
+<div class="col-md-9">
+<div class="container">
+<h1>zilver</h1>
+{{ form("mediaplayer/zilvervideo") }}
+{{ text_field("videos", "class": "form-control", "placeholder": "videolink : https://player.vimeo.com/voorbeeld")}}
+{{ text_field("thumbnail", "class": "form-control", "placeholder": "Naam van thumbnail //Bijvoorbeeld: ondernemen") }}
+{{ text_field("programma", "class": "form-control", "placeholder": "Programma") }}
+{{ text_field("title", "class": "form-control", "placeholder": "titel")}}
+{{ text_area("description", "class": "form-control", "placeholder": "eventuele text hier")}}
+{{ submit_button("submit", "class": "btn btn-primary") }}
+{{ end_form() }} 
+
+<h1>Upload thumbnail hier</h1>
+{{ form('mediaplayer/upload','enctype':'multipart/form-data','method':'POST')}}
+{{file_field('files[]', 'class':'form-control')}}
+{{submit_button('Upload Image', 'class':'btn btn-primary')}}
+{{ end_form() }}
+
+</div>
+</div>
+
+{% endif %}
