@@ -18,7 +18,7 @@ $media = mediagold::findFirstBymedia_id($show['id']);
 
                 </div>
 
-                <h1 class="header__title text-transform-uppercase">Admin Dashboard:<br>{{auth['firstname']}} {{auth['lastname']}}</h1>
+                <h1 class="header__title text-transform-uppercase">Admin Dashboard:<br><?php echo $auth['firstname']; ?> <?php echo $auth['lastname']; ?></h1>
 
                 <div class="header__responsive-line">
 
@@ -44,10 +44,10 @@ $media = mediagold::findFirstBymedia_id($show['id']);
 </header>
 <div class="container">
 <li>	
-<iframe src="{{ media.videos }}"></iframe>
+<iframe src="<?php echo $media->videos; ?>"></iframe>
 </br>
-<h1>{{media.title}}</h1>
+<h1><?php echo $media->title; ?></h1>
 </br>
-{{media.description}}
+<?php echo $media->description; ?>
 </li>	
 </div
