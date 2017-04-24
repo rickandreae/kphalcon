@@ -1,0 +1,48 @@
+.alignbody
+{
+	display: block;
+	text-align: center;
+}
+.alignpackage
+{
+	display: inline-block;
+	width: 200px;
+}
+
+.credits
+{
+	border-top: solid 3px black;
+	border-bottom: solid 3px black;
+	margin: 18px;
+}
+.creditpacks
+{
+	border-left: solid 3px black;
+	border-right: solid 3px black;
+	border-bottom: solid 3px black;
+}
+.creditpack1
+{
+	background-color: green;
+}
+.creditpack2
+{
+	background-color: gold;
+}
+.creditpack3
+{
+	background-color: orange;
+}
+.creditpack4
+{
+	background-color: magenta;
+}
+.creditpack5
+{
+	background-color: purple;
+}
+.money
+{
+	border-top: solid 3px black;
+	border-bottom: solid 3px black;
+}

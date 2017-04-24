@@ -10,7 +10,7 @@ class SessionController extends ControllerBase
        
         $auth = $this->session->get('auth');
         $this->view->auth = $auth;
-
+        $this->view->message = '';
         if($this->request->isPost())
         {
             $password = $this->request->getPost("password");
@@ -22,7 +22,7 @@ class SessionController extends ControllerBase
                     $this->response->redirect('');
                 }
                 else{
-                    $this->view->title = 'banaan';
+                    $this->view->message = 'Email of Wachtwoord verkeerd';
                 }
             }
         }

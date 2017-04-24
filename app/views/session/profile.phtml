@@ -14,7 +14,7 @@
 
                 </div>
 
-                <h1 class="header__title text-transform-uppercase">JOUW PROFIEL GEGEVENS: {{auth['firstname']}} {{auth['lastname']}}</h1>
+                <h1 class="header__title text-transform-uppercase">JOUW PROFIEL GEGEVENS: <br>{{auth['firstname']}} {{auth['lastname']}}</h1>
 
                 <div class="header__responsive-line">
 
@@ -43,6 +43,7 @@
 <img src="/kphalcon/public/img/default.png" height="300px" width="300px";></img>
 </div>
 <div>
+    <a id="nav-bar-call-trigger" class="nav-bar__call icon icon--call"></a>
 <p>{{auth['firstname']}} {{auth['lastname']}}</p>
 <p>{{auth['email']}}</p>
 <a href="/kphalcon/session/changeemail/"><p class="glyphicon glyphicon-pencil">Verander je E-mail</p></a>

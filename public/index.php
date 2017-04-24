@@ -82,6 +82,7 @@ $di->set(
                 "username" => "root",
                 "password" => "",
                 "dbname"   => "kphalcon",
+                "charset"  => "utf8",
             ]
         );
     }

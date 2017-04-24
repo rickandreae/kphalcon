@@ -26,20 +26,22 @@
             </div>
         </div>
     </header>
-{{ form("session") }}
-<div class="container">
-		
-			<h1>Inloggen</h1>	
-			{{ text_field("email", "class": "form-control", "placeholder": "E-mail", "required") }}
-			
-			{{ password_field("password", "class": "form-control", "placeholder": "Wachtwoord", "required") }}
-				
-			{{ submit_button("Inloggen", "class": "btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha") }}
 
-			   <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
-        value="<?php echo $this->security->getToken() ?>"/>
+<div class="container container-beta">
+		  <h2 class="centertext">Inloggen</h2>
+          {{message}}
+          <div class="inlog">
+			{{ form("session") }}	
+			{{ text_field("email", "class": "formspacing", "placeholder": "E-mail", "required") }}
+			
+			{{ password_field("password", "class": "formspacing", "placeholder": "Wachtwoord", "required") }}
+				
+			{{ submit_button("Inloggen", "class": "inlogpos btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha") }}
+
+			<input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
+            value="<?php echo $this->security->getToken() ?>"/>
 			<br>	
 			<a href="/kphalcon/changepass">Wachtwoord vergeten?</a>
-		
+		      
 </div>
 {{ end_form() }}

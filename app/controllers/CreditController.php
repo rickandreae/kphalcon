@@ -2,7 +2,7 @@
 
 use Phalcon\Mvc\Controller;
 
-class PackageController extends ControllerBase
+class CreditController extends ControllerBase
 {
     public function indexAction()
     {  

@@ -49,10 +49,9 @@ $producten = $this->session->get('producten');
 ?>
 <script type="text/javascript">  </script>
 {{ form("session/register") }} 
-<div class="container">
-
-        <h2>Registreren</h2>
-
+<div class="container container-beta">
+    <h2 class="centertext">Registreren</h2>
+    <div class="inlog">
 
         {{ select("roles_id", roles, "using": ["roles_id", "roles_type"],  "class": "form-control",  "useEmpty" : true, "emptyValue":"@", "onchange" : "reveal_schools(); reveal_entrepreneur_form();") }}
         
@@ -65,11 +64,11 @@ $producten = $this->session->get('producten');
         {{ text_field("firstname", "class": "form-control", "placeholder": "Voornaam") }}
             
         {{ text_field("lastname", "class": "form-control", "placeholder": "Achternaam") }}
-        <div class="email" style="display:inline-block;">
+        
         {{ text_field("aEmail", "class": "form-control","placeholder": "E-mail", "onkeyup" : "fuse_email();") }}
 
         {{ text_field("bEmail", "class": "form-control", "placeholder": "@example.com", "readonly":"true" ) }}
-        </div>
+        
         {{ email_field("email", "class": "form-control", "placeholder": "E-mail" , "style":"display:none;") }}
 
         {{ password_field("password", "class": "form-control", "placeholder": "Password")}}
@@ -86,10 +85,10 @@ $producten = $this->session->get('producten');
 
         {{ text_field("city", "class": "form-control", "placeholder": "Stad") }}
         
-        {{ submit_button("Registreren", "class": "btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha") }}
+        {{ submit_button("Registreren", "class": "inlogpos btn btn--ghost btn--epsilon btn--right-arrow btn--medium icon icon--right-open-1 icon--margin-alpha") }}
         
         <input type="hidden" name="<?php echo $this->security->getTokenKey() ?>"
         value="<?php echo $this->security->getToken() ?>"/>
-        
+     </div>   
 </div>
 {{ end_form() }}

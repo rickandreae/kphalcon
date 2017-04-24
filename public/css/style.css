@@ -2333,7 +2333,7 @@ body {
   font-family: icons;
   font-style: normal;
   font-weight: 400;
-  src: url(public/fonts/icons/icons.woff2) format("woff2"), url(public/fonts/icons/icons.woff) format("woff")
+  src: url(../public/fonts/icons/icons.woff2) format("woff2"), url(../public/fonts/icons/icons.woff) format("woff")
 }
 .accordion__trigger:after, .form__password-toggle:after, .form__select:after, .icon-after:after, .icon:before, .nav-bar__call, .nav-bar__trigger, .notification:before, .notification__close, input[type=checkbox]+label:after, input[type=radio]+label:after {
   font-family: icons, arial, verdana;
@@ -5258,5 +5258,21 @@ input[type=range]::-ms-fill-lower {
   }
 }
 .footer {
+  text-align: center;
+}
+.inlog {  
+  margin-right: 200px;
+  margin-left: 200px;
+  padding: 60px;
+   
+}
+.inlogpos {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+.formspacing {
+  margin-top: 5px;
+}
+.centertext {
   text-align: center;
 }
